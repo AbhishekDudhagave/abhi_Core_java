@@ -34,7 +34,7 @@ public static int showBalance()throws ZeroBalance{
 		return leftBalance;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ZeroBalance {
 		int checkBalance=showBalance();
 		System.out.println(checkBalance);
 
