@@ -1,4 +1,4 @@
-package DemoCollection;
+package DemoCollection.demoArrayList;
 
 public class Student {
 	String name;
