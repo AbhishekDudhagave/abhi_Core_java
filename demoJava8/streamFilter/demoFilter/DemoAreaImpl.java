@@ -1,6 +1,4 @@
-package demoJava8;
-
-import java.util.Scanner;
+package demoJava8.streamFilter.demoFilter;
 
 public class DemoAreaImpl {
 	public static void main(String[] args) {

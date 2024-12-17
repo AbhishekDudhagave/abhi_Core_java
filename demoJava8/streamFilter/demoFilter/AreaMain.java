@@ -1,9 +1,9 @@
-package demoJava8;
+package demoJava8.streamFilter.demoFilter;
 
 public class AreaMain {
 	public static void main(String[] args) {
 
-		Area aa=(num1,num2)->{
+		Area aa=(num1, num2)->{
 
 		double res=0.5*(num1*num2);
 		return res;

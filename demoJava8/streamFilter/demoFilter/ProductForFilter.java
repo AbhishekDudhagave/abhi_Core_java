@@ -1,4 +1,4 @@
-package demoJava8;
+package demoJava8.streamFilter.demoFilter;
 
 public class ProductForFilter {
 	String productName;
