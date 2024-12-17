@@ -31,8 +31,13 @@ public class DempFlatMap {
 		System.out.println("before flatmap");
 		System.out.println(finalList);
 
-		List<Integer> mergedList = finalList.stream()
-				.flatMap(x -> x.stream())
+//		List<Integer> mergedList = finalList.stream()
+//				.flatMap(x -> x.stream())
+//				.collect(Collectors.toList());
+
+//		adding 10 in all lists
+		List<Integer> mergedList =finalList.stream()
+				.flatMap(x -> x.stream().map(num -> num + 10))
 				.collect(Collectors.toList());
 
 		System.out.println("after flat map");
