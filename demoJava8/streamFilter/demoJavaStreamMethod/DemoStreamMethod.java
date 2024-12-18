@@ -1,9 +1,9 @@
 package demoJava8.streamFilter.demoJavaStreamMethod;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DemoStreamMethod {
 	static void basicMethods(){
@@ -60,8 +60,66 @@ public class DemoStreamMethod {
 			System.out.println(i);
 		}
 	}
+	static void basicNewMethod3(){
+		List <Integer> numList=Arrays.asList(1,2,3,6,4,8,3,2);
+		List<Integer> areeangedNumList = numList.stream().sorted().collect(Collectors.toList());
+
+		System.out.println(areeangedNumList);
+		System.out.println("---------------------");
+
+		List <Integer> numList1=Arrays.asList(1,2,3,6,4,8,3,2);
+		numList1.stream()
+				.sorted(Comparator.reverseOrder())
+				.forEach(x->System.out.println(x));
+
+		List<String> strList=Arrays.asList("Hello","World","New","Year");
+		strList.stream()
+				.sorted(Comparator.reverseOrder())
+				.forEach(x->System.out.println(x));
+	}
+	static void anyMatchStream(){
+		Set<String> str=new HashSet<>();
+		str.add("hello user");
+		str.add("hello world");
+		str.add("new user");
+		str.add("old user");
+
+		boolean value = str.stream()
+				.anyMatch(x -> {
+					return x.startsWith("hello");
+				});
+		System.out.println(value);
+		System.out.println("---------------");
+
+		boolean value2 = str.stream().allMatch(x -> {
+			return x.startsWith("hello");
+		});
+
+		System.out.println(value2);
+
+		boolean value3 = str.stream().noneMatch(x -> {
+			return x.startsWith("H");
+		});
+		System.out.println(value3);
+	}
+	static void findanyStream(){
+		List<String> name= Arrays.asList("hello","ram","shyam");
+//		String any = name.stream().findAny().get();
+//		System.out.println(any);
+		String firstStr = name.stream().findFirst().get();
+		System.out.println(firstStr);
+		List<String> surname= Arrays.asList("world","sundar","prasad");
+
+		Stream<String> stream1 = name.stream();
+		Stream<String> stream2 = surname.stream();
+		List<String>finalList= Stream.concat(stream1,stream2).collect(Collectors.toList());
+		System.out.println(finalList);
+	}
 	public static void main(String[] args) {
 //		basicMethods2();
-		streamToArray();
+//		streamToArray();
+//		basicNewMethod3();
+//		anyMatchStream();
+		findanyStream();
 	}
 }
